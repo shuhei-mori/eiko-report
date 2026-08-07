@@ -5,69 +5,70 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
- background:#0e1524;color:#e7ecf5;line-height:1.5;padding:14px 12px 48px;-webkit-text-size-adjust:100%;overflow-x:hidden}
+ background:#eef1f6;color:#1b2537;line-height:1.55;padding:14px 12px 48px;-webkit-text-size-adjust:100%;overflow-x:hidden}
 .wrap{max-width:760px;margin:0 auto}
 .wrap>*{max-width:100%}
 .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .fl .lab span,.gauge .lab span,.row .v,.row .nm{min-width:0}
-h1{font-size:20px;margin:2px 0}
-.sub{color:#8394b3;font-size:12px;margin-bottom:14px}
-.sec{font-size:15px;font-weight:700;color:#cdd8ec;margin:22px 0 8px}
+h1{font-size:21px;margin:2px 0;color:#1b2537}
+.sub{color:#6b7488;font-size:12px;margin-bottom:14px}
+.sec{font-size:16px;font-weight:800;color:#1b2537;margin:24px 0 8px}
 .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.card{background:#18233b;border:1px solid #2a3a5c;border-radius:12px;padding:14px}
-.card h2{font-size:13px;color:#9fb0cf;font-weight:600;margin-bottom:10px}
+.rgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:#fff;border:1px solid #e2e7f0;border-radius:12px;padding:14px;box-shadow:0 1px 3px rgba(23,37,74,.06)}
+.card h2{font-size:13px;color:#5f6b82;font-weight:700;margin-bottom:10px}
 /* 比較バー行：ラベル・バー・数値をきっちり整列 */
 .row{display:flex;align-items:center;gap:8px;margin:8px 0}
-.row .nm{flex:0 0 42px;font-size:13px;color:#cdd8ec}
-.row .track{flex:1;height:15px;background:#22304d;border-radius:8px;overflow:hidden}
+.row .nm{flex:0 0 42px;font-size:13px;color:#3d4759;font-weight:600}
+.row .track{flex:1;height:15px;background:#e6eaf2;border-radius:8px;overflow:hidden}
 .row .track>span{display:block;height:100%;border-radius:8px}
-.row .v{flex:0 0 60px;text-align:right;font-size:13px;font-variant-numeric:tabular-nums}
+.row .v{flex:0 0 60px;text-align:right;font-size:13px;font-variant-numeric:tabular-nums;color:#1b2537}
 /* ファネル */
 .fl{margin:9px 0}
-.fl .lab{display:flex;justify-content:space-between;font-size:13px;color:#cdd8ec;margin-bottom:4px}
-.fl .track{height:16px;background:#22304d;border-radius:8px;overflow:hidden}
+.fl .lab{display:flex;justify-content:space-between;font-size:13px;color:#3d4759;margin-bottom:4px}
+.fl .track{height:16px;background:#e6eaf2;border-radius:8px;overflow:hidden}
 .fl .track>span{display:block;height:100%;border-radius:8px}
-.pfunnel{margin-top:10px;padding-top:8px;border-top:1px solid #26324d}
+.pfunnel{margin-top:10px;padding-top:8px;border-top:1px solid #e6eaf2}
 .pfunnel .fl{margin:7px 0}
 /* ランキング */
 .medal{flex:0 0 auto;width:auto;height:auto}
-.rk1{display:flex;align-items:center;gap:14px;padding:4px 2px 12px;border-bottom:1px solid #26324d}
+.rk1{display:flex;align-items:center;gap:14px;padding:4px 2px 12px;border-bottom:1px solid #e6eaf2}
 .rk1 .rkinfo{flex:1;min-width:0}
-.rk1 .rkname{font-size:22px;font-weight:800;color:#fff;line-height:1.2}
-.rk1 .rkval{font-size:15px;font-weight:700;color:#c9974e}
+.rk1 .rkname{font-size:22px;font-weight:800;color:#1b2537;line-height:1.2}
+.rk1 .rkval{font-size:15px;font-weight:800;color:#a9781f}
 .rk23{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.rkcell{display:flex;align-items:center;gap:9px;background:#1a2540;border-radius:10px;padding:8px 10px;min-width:0}
+.rkcell{display:flex;align-items:center;gap:9px;background:#f2f5fa;border-radius:10px;padding:8px 10px;min-width:0}
 .rkcell>div{min-width:0}
-.rkcell .rkname2{font-size:14px;font-weight:700;color:#e7ecf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rkcell .rkval2{font-size:12px;color:#9fb0cf}
-.rk4{font-size:12px;color:#8394b3;margin-top:10px}
-/* ハイライト */
-.hltag{font-size:11px;color:#9fb0cf;min-height:30px;display:flex;align-items:flex-start}
-.hlname{font-size:24px;font-weight:700;margin:2px 0}
-.hldesc{font-size:12px;color:#8394b3;min-height:34px}
-.formula{font-size:11px;color:#5f7096;margin:-6px 0 8px}
+.rkcell .rkname2{font-size:14px;font-weight:700;color:#1b2537;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rkcell .rkval2{font-size:12px;color:#5f6b82}
+.rk4{font-size:12px;color:#6f7789;margin-top:10px}
+/* ハイライト（旧・残置） */
+.hltag{font-size:11px;color:#7a8299;min-height:30px;display:flex;align-items:flex-start}
+.hlname{font-size:24px;font-weight:700;margin:2px 0;color:#1b2537}
+.hldesc{font-size:12px;color:#6f7789;min-height:34px}
+.formula{font-size:11px;color:#8a93a6;margin:-6px 0 8px}
 /* 量サマリー */
 .qtbl{width:100%;border-collapse:collapse;font-size:12px;min-width:300px}
-.qtbl th,.qtbl td{padding:5px 4px;border-bottom:1px solid #263450;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.qtbl th{color:#9fb0cf;font-weight:600}
-.qtbl th .dt{display:block;font-size:10px;color:#5f7096;font-weight:400;margin-top:1px}
+.qtbl th,.qtbl td{padding:5px 4px;border-bottom:1px solid #e6eaf2;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#1b2537}
+.qtbl th{color:#5f6b82;font-weight:700}
+.qtbl th .dt{display:block;font-size:10px;color:#8a93a6;font-weight:400;margin-top:1px}
 .qtbl td:first-child,.qtbl th:first-child{text-align:left}
-.up{color:#6fcf97}.down{color:#eb8c8c}
+.up{color:#1f9d57}.down{color:#d15b5b}
 /* 目標ゲージ */
 .gauge{margin:10px 0}
-.gauge .lab{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
-.gauge .track{height:18px;background:#22304d;border-radius:9px;overflow:hidden;position:relative}
+.gauge .lab{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;color:#3d4759}
+.gauge .track{height:18px;background:#e6eaf2;border-radius:9px;overflow:hidden;position:relative}
 .gauge .track>span{display:block;height:100%;background:linear-gradient(90deg,#4a90d9,#57b894);border-radius:9px}
 /* 個人カード */
-.pcard h3{font-size:15px;margin-bottom:8px;padding-left:9px;border-left:5px solid}
+.pcard h3{font-size:15px;margin-bottom:8px;padding-left:9px;border-left:5px solid;color:#1b2537}
 .donutwrap{display:flex;gap:14px;align-items:center}
 .donut{width:104px;height:104px;border-radius:50%;flex:none;position:relative}
-.donut .hole{position:absolute;inset:24px;background:#18233b;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.mini{display:flex;justify-content:space-between;font-size:12px;color:#aab7d1;margin:4px 0}
-.mini b{color:#fff;font-size:13px;font-variant-numeric:tabular-nums}
-.note{font-size:11px;color:#8394b3;margin-top:6px;line-height:1.7}
+.donut .hole{position:absolute;inset:24px;background:#fff;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mini{display:flex;justify-content:space-between;font-size:12px;color:#5f6b82;margin:4px 0}
+.mini b{color:#1b2537;font-size:13px;font-variant-numeric:tabular-nums}
+.note{font-size:11px;color:#6f7789;margin-top:6px;line-height:1.7}
 svg{display:block;width:100%;height:auto}
-@media(max-width:520px){.grid{grid-template-columns:1fr}h1{font-size:18px}}
+@media(max-width:520px){.grid,.rgrid{grid-template-columns:1fr}h1{font-size:19px}}
 </style></head><body><div class="wrap">
 <h1>2026年8月 営業ダッシュボード</h1>
 <div class="sub">結果報告（訪問全数）＋録音解析から自動生成／毎朝更新／当月6日までの累計</div>
@@ -77,7 +78,7 @@ svg{display:block;width:100%;height:auto}
 <div class="sec">個別ファネル</div><div class="grid">
 <div class="card pcard"><h3 style="border-color:#4a90d9">横溝大樹</h3>
 <div class="donutwrap">
-<div class="donut" style="background:conic-gradient(#57b894 0.0deg 162.0deg,#a97bd6 162.0deg 209.2deg,#3a4d72 209.2deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">160</div></div></div>
+<div class="donut" style="background:conic-gradient(#57b894 0.0deg 162.0deg,#a97bd6 162.0deg 209.2deg,#c3ccdb 209.2deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#6f7789">叩いた</div><div style="font-size:19px;font-weight:700">160</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>72</b></div><div class="mini"><span>インターOUT</span><b>21</b></div><div class="mini"><span>不在ほか</span><b>67</b></div></div></div>
 <div class="pfunnel">
 <div class="fl"><div class="lab"><span>叩いた</span><span>160件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>72件（叩いた比 45%）</span></div><div class="track"><span style="width:45%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>13件（面談比 18%）</span></div><div class="track"><span style="width:8%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>1件（ﾄｰｸ比 8%）</span></div><div class="track"><span style="width:1%;background:#e06c6c"></span></div></div>
@@ -85,11 +86,11 @@ svg{display:block;width:100%;height:auto}
 <div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>0.7分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>160件</b></div>
-<div class="note">一番の穴：フルトーク→アポ（8%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
+<div class="note">一番の課題：フルトーク→アポ（8%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 <div class="card pcard"><h3 style="border-color:#57b894">関谷駿介</h3>
 <div class="donutwrap">
-<div class="donut" style="background:conic-gradient(#57b894 0.0deg 207.6deg,#a97bd6 207.6deg 240.0deg,#3a4d72 240.0deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">111</div></div></div>
+<div class="donut" style="background:conic-gradient(#57b894 0.0deg 207.6deg,#a97bd6 207.6deg 240.0deg,#c3ccdb 240.0deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#6f7789">叩いた</div><div style="font-size:19px;font-weight:700">111</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>64</b></div><div class="mini"><span>インターOUT</span><b>10</b></div><div class="mini"><span>不在ほか</span><b>37</b></div></div></div>
 <div class="pfunnel">
 <div class="fl"><div class="lab"><span>叩いた</span><span>111件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>64件（叩いた比 58%）</span></div><div class="track"><span style="width:58%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>12件（面談比 19%）</span></div><div class="track"><span style="width:11%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>3件（ﾄｰｸ比 25%）</span></div><div class="track"><span style="width:3%;background:#e06c6c"></span></div></div>
@@ -97,11 +98,11 @@ svg{display:block;width:100%;height:auto}
 <div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>0.7分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>37件</b></div>
-<div class="note">一番の穴：面談→フルトーク（19%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
+<div class="note">一番の課題：面談→フルトーク（19%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 <div class="card pcard"><h3 style="border-color:#a97bd6">吉田圭太郎</h3>
 <div class="donutwrap">
-<div class="donut" style="background:conic-gradient(#57b894 0.0deg 223.4deg,#a97bd6 223.4deg 242.1deg,#3a4d72 242.1deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">174</div></div></div>
+<div class="donut" style="background:conic-gradient(#57b894 0.0deg 223.4deg,#a97bd6 223.4deg 242.1deg,#c3ccdb 242.1deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#6f7789">叩いた</div><div style="font-size:19px;font-weight:700">174</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>108</b></div><div class="mini"><span>インターOUT</span><b>9</b></div><div class="mini"><span>不在ほか</span><b>57</b></div></div></div>
 <div class="pfunnel">
 <div class="fl"><div class="lab"><span>叩いた</span><span>174件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>108件（叩いた比 62%）</span></div><div class="track"><span style="width:62%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>27件（面談比 25%）</span></div><div class="track"><span style="width:16%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>3件（ﾄｰｸ比 11%）</span></div><div class="track"><span style="width:2%;background:#e06c6c"></span></div></div>
@@ -109,11 +110,11 @@ svg{display:block;width:100%;height:auto}
 <div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>0.8分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>58件</b></div>
-<div class="note">一番の穴：フルトーク→アポ（11%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
+<div class="note">一番の課題：フルトーク→アポ（11%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 <div class="card pcard"><h3 style="border-color:#e0a24e">田村知哉</h3>
 <div class="donutwrap">
-<div class="donut" style="background:conic-gradient(#57b894 0.0deg 201.3deg,#a97bd6 201.3deg 229.6deg,#3a4d72 229.6deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">127</div></div></div>
+<div class="donut" style="background:conic-gradient(#57b894 0.0deg 201.3deg,#a97bd6 201.3deg 229.6deg,#c3ccdb 229.6deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#6f7789">叩いた</div><div style="font-size:19px;font-weight:700">127</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>71</b></div><div class="mini"><span>インターOUT</span><b>10</b></div><div class="mini"><span>不在ほか</span><b>46</b></div></div></div>
 <div class="pfunnel">
 <div class="fl"><div class="lab"><span>叩いた</span><span>127件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>71件（叩いた比 56%）</span></div><div class="track"><span style="width:56%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>18件（面談比 25%）</span></div><div class="track"><span style="width:14%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>6件（ﾄｰｸ比 33%）</span></div><div class="track"><span style="width:5%;background:#e06c6c"></span></div></div>
@@ -121,11 +122,10 @@ svg{display:block;width:100%;height:auto}
 <div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>2.1分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>21件</b></div>
-<div class="note">一番の穴：面談→フルトーク（25%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
+<div class="note">一番の課題：面談→フルトーク（25%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 </div>
-<div class="note" style="margin-top:16px">※コミュ力＝送られた録音の文字数の中央値を分換算（1分≒1000字）。会話を長く続けられている＝玄関で信頼を得られている目安。</div>
-<div class="sec">量サマリー（今日・今週・今月）</div>
+<div class="note" style="margin-top:16px">※コミュ力＝送られた録音の文字数の中央値を分換算（1分≒1000字）。会話を長く続けられている＝玄関で信頼を得られている目安。</div><div class="sec">量サマリー（今日・今週・今月）</div>
 <div class="card"><div class="scroll"><table class="qtbl"><tr><th>営業</th><th>今日<span class="dt">8/6</span></th><th>平均比</th><th>今週<span class="dt">8/1〜8/6</span></th><th>今月<span class="dt">8/1〜8/6</span></th></tr>
 <tr><td>横溝</td><td>32</td><td class="up">+0%</td><td>160</td><td>160</td></tr>
 <tr><td>関谷</td><td>24</td><td class="up">+8%</td><td>111</td><td>111</td></tr>
@@ -133,29 +133,28 @@ svg{display:block;width:100%;height:auto}
 <tr><td>田村</td><td>30</td><td class="up">+18%</td><td>127</td><td>127</td></tr>
 </table></div><div class="note">「今日」＝最終日の叩いた数。平均比は自分の1日平均との差。量を意識する人向け。今月＝6日までの累計。</div></div>
 <div class="sec">量 × 質 マップ（目標ライン）</div>
-<div class="card"><svg viewBox="0 0 340 300"><rect x="44" y="26" width="280" height="242" fill="#111a2e" stroke="#2a3a5c"/><line x1="281" y1="26" x2="281" y2="268" stroke="#c9974e" stroke-width="1.5"/><line x1="44" y1="98" x2="324" y2="98" stroke="#c9974e" stroke-width="1.5"/><text x="278" y="37" fill="#c9974e" font-size="9" text-anchor="end">量目標40/日</text><text x="321" y="94" fill="#c9974e" font-size="9" text-anchor="end">質目標7%</text><text x="320" y="50" fill="#5f7096" font-size="9" text-anchor="end">量◎質◎ 目標クリア</text><text x="48" y="50" fill="#5f7096" font-size="9">質は目標／量を増やす</text><text x="320" y="263" fill="#5f7096" font-size="9" text-anchor="end">量は目標／質を上げる</text><text x="48" y="263" fill="#5f7096" font-size="9">どちらも目標未達</text><text x="44" y="292" fill="#8394b3" font-size="10">→ 量（1日あたり叩いた）</text><text x="38" y="15" fill="#8394b3" font-size="10">↑ 質（面談→アポ率）</text><circle cx="234" cy="234" r="7" fill="#4a90d9"/><text x="234" y="223" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">横溝</text><circle cx="176" cy="154" r="7" fill="#57b894"/><text x="176" y="143" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">関谷</text><circle cx="250" cy="201" r="7" fill="#a97bd6"/><text x="250" y="190" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">吉田</text><circle cx="195" cy="63" r="7" fill="#e0a24e"/><text x="195" y="52" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">田村</text></svg><div class="note">線は<b style="color:#c9974e">絶対目標</b>（量＝1日40件・質＝面談→アポ率7%）。質のゴールはフルトークでなく<b>アポ</b>。チーム内で上でも、目標に届かなければ右上（クリア）には入りません。右上に入るのが理想＝量も質も目標到達。目標値は運用に合わせて調整できます。</div></div>
+<div class="card"><svg viewBox="0 0 340 300"><rect x="44" y="26" width="280" height="242" fill="#f7f9fc" stroke="#d3dbe8"/><line x1="281" y1="26" x2="281" y2="268" stroke="#c9974e" stroke-width="1.5"/><line x1="44" y1="98" x2="324" y2="98" stroke="#c9974e" stroke-width="1.5"/><text x="278" y="37" fill="#a9781f" font-size="9" text-anchor="end">量目標40/日</text><text x="321" y="94" fill="#a9781f" font-size="9" text-anchor="end">質目標7%</text><text x="320" y="50" fill="#8a93a6" font-size="9" text-anchor="end">量◎質◎ 目標クリア</text><text x="48" y="50" fill="#8a93a6" font-size="9">質は目標／量を増やす</text><text x="320" y="263" fill="#8a93a6" font-size="9" text-anchor="end">量は目標／質を上げる</text><text x="48" y="263" fill="#8a93a6" font-size="9">どちらも目標未達</text><text x="44" y="292" fill="#6f7789" font-size="10">→ 量（1日あたり叩いた）</text><text x="38" y="15" fill="#6f7789" font-size="10">↑ 質（面談→アポ率）</text><circle cx="234" cy="234" r="7" fill="#4a90d9" stroke="#fff" stroke-width="1.5"/><text x="234" y="223" fill="#1b2537" font-size="11" font-weight="700" text-anchor="middle">横溝</text><circle cx="176" cy="154" r="7" fill="#57b894" stroke="#fff" stroke-width="1.5"/><text x="176" y="143" fill="#1b2537" font-size="11" font-weight="700" text-anchor="middle">関谷</text><circle cx="250" cy="201" r="7" fill="#a97bd6" stroke="#fff" stroke-width="1.5"/><text x="250" y="190" fill="#1b2537" font-size="11" font-weight="700" text-anchor="middle">吉田</text><circle cx="195" cy="63" r="7" fill="#e0a24e" stroke="#fff" stroke-width="1.5"/><text x="195" y="52" fill="#1b2537" font-size="11" font-weight="700" text-anchor="middle">田村</text></svg><div class="note">線は<b style="color:#c9974e">絶対目標</b>（量＝1日40件・質＝面談→アポ率7%）。質のゴールはフルトークでなく<b>アポ</b>。チーム内で上でも、目標に届かなければ右上（クリア）には入りません。右上に入るのが理想＝量も質も目標到達。目標値は運用に合わせて調整できます。</div></div>
 <div class="sec">月間アポ目標の進捗</div><div class="card">
 <div class="gauge"><div class="lab"><span>横溝</span><span>1 / 10件</span></div><div class="track"><span style="width:10%"></span></div><div class="note" style="margin-top:3px">このペースで着地 約5件</div></div>
 <div class="gauge"><div class="lab"><span>関谷</span><span>3 / 18件</span></div><div class="track"><span style="width:17%"></span></div><div class="note" style="margin-top:3px">このペースで着地 約16件</div></div>
 <div class="gauge"><div class="lab"><span>吉田</span><span>2 / 20件</span></div><div class="track"><span style="width:10%"></span></div><div class="note" style="margin-top:3px">このペースで着地 約10件</div></div>
 <div class="gauge"><div class="lab"><span>田村</span><span>5 / 16件</span></div><div class="track"><span style="width:31%"></span></div><div class="note" style="margin-top:3px">このペースで着地 約26件</div></div>
 <div class="note">今月アポ数÷目標。着地予測＝今のペースを月末まで伸ばした概算。</div></div>
-<div class="sec">叩き数ランキング（行動力）</div>
-<div class="card"><div class="formula">当月の叩いた合計。まずは行動量。1位＝一番動いた人。</div><div class="rk1"><svg class="medal" width="46" height="52" viewBox="0 0 40 46"><path d="M12 1 L21 23 L15 23 Z" fill="#5b6b8c"/><path d="M28 1 L19 23 L25 23 Z" fill="#7686aa"/><circle cx="20" cy="31" r="14" fill="#f2c94c"/><circle cx="20" cy="31" r="14" fill="none" stroke="#ffffff40" stroke-width="1.5"/><text x="20" y="36" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">吉田圭太郎</div><div class="rkval">174件</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="36" viewBox="0 0 40 46"><path d="M12 1 L21 23 L15 23 Z" fill="#5b6b8c"/><path d="M28 1 L19 23 L25 23 Z" fill="#7686aa"/><circle cx="20" cy="31" r="14" fill="#c4cdd9"/><circle cx="20" cy="31" r="14" fill="none" stroke="#ffffff40" stroke-width="1.5"/><text x="20" y="36" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">横溝</div><div class="rkval2">160件</div></div></div><div class="rkcell"><svg class="medal" width="32" height="36" viewBox="0 0 40 46"><path d="M12 1 L21 23 L15 23 Z" fill="#5b6b8c"/><path d="M28 1 L19 23 L25 23 Z" fill="#7686aa"/><circle cx="20" cy="31" r="14" fill="#cd7f44"/><circle cx="20" cy="31" r="14" fill="none" stroke="#ffffff40" stroke-width="1.5"/><text x="20" y="36" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">田村</div><div class="rkval2">127件</div></div></div></div><div class="rk4">4位　関谷　111件</div></div>
-<div class="sec">アポ数ランキング（成果）</div>
-<div class="card"><div class="formula">当月のアポ（ペン＋確）合計。最終成果。行動が結果に結びついた人。</div><div class="rk1"><svg class="medal" width="46" height="52" viewBox="0 0 40 46"><path d="M12 1 L21 23 L15 23 Z" fill="#5b6b8c"/><path d="M28 1 L19 23 L25 23 Z" fill="#7686aa"/><circle cx="20" cy="31" r="14" fill="#f2c94c"/><circle cx="20" cy="31" r="14" fill="none" stroke="#ffffff40" stroke-width="1.5"/><text x="20" y="36" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">田村知哉</div><div class="rkval">6件</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="36" viewBox="0 0 40 46"><path d="M12 1 L21 23 L15 23 Z" fill="#5b6b8c"/><path d="M28 1 L19 23 L25 23 Z" fill="#7686aa"/><circle cx="20" cy="31" r="14" fill="#c4cdd9"/><circle cx="20" cy="31" r="14" fill="none" stroke="#ffffff40" stroke-width="1.5"/><text x="20" y="36" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">関谷</div><div class="rkval2">3件</div></div></div><div class="rkcell"><svg class="medal" width="32" height="36" viewBox="0 0 40 46"><path d="M12 1 L21 23 L15 23 Z" fill="#5b6b8c"/><path d="M28 1 L19 23 L25 23 Z" fill="#7686aa"/><circle cx="20" cy="31" r="14" fill="#cd7f44"/><circle cx="20" cy="31" r="14" fill="none" stroke="#ffffff40" stroke-width="1.5"/><text x="20" y="36" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">吉田</div><div class="rkval2">3件</div></div></div></div><div class="rk4">4位　横溝　1件</div></div><div class="sec">指標くらべ</div><div class="grid">
+<div class="sec">隠れた強み（8月・各項目No.1）</div><div class="rgrid">
+<div class="card"><h2>叩き数（行動力）</h2><div class="formula">当月の叩いた合計。まずは行動量。</div><div class="rk1"><svg class="medal" width="46" height="46" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#f2c94c"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">吉田圭太郎</div><div class="rkval">174件</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#c4cdd9"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">横溝</div><div class="rkval2">160件</div></div></div><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#cd7f44"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">田村</div><div class="rkval2">127件</div></div></div></div><div class="rk4">4位　関谷　111件</div></div>
+<div class="card"><h2>面談率（玄関で会える）</h2><div class="formula">＝面談 ÷ 叩いた。玄関で会える力。</div><div class="rk1"><svg class="medal" width="46" height="46" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#f2c94c"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">吉田圭太郎</div><div class="rkval">62%</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#c4cdd9"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">関谷</div><div class="rkval2">58%</div></div></div><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#cd7f44"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">田村</div><div class="rkval2">56%</div></div></div></div><div class="rk4">4位　横溝　45%</div></div>
+<div class="card"><h2>面談→フルトーク率</h2><div class="formula">＝フルトーク ÷ 面談。話を最後まで聞いてもらう力。</div><div class="rk1"><svg class="medal" width="46" height="46" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#f2c94c"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">田村知哉</div><div class="rkval">25%</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#c4cdd9"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">吉田</div><div class="rkval2">25%</div></div></div><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#cd7f44"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">関谷</div><div class="rkval2">19%</div></div></div></div><div class="rk4">4位　横溝　18%</div></div>
+<div class="card"><h2>フルトーク→アポ率（決定力）</h2><div class="formula">＝アポ ÷ フルトーク。提案後の決定力。</div><div class="rk1"><svg class="medal" width="46" height="46" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#f2c94c"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">田村知哉</div><div class="rkval">33%</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#c4cdd9"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">関谷</div><div class="rkval2">25%</div></div></div><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#cd7f44"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">吉田</div><div class="rkval2">11%</div></div></div></div><div class="rk4">4位　横溝　8%</div></div>
+<div class="card"><h2>アポ数（成果）</h2><div class="formula">当月のアポ（ペン＋確）合計。最終成果。</div><div class="rk1"><svg class="medal" width="46" height="46" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#f2c94c"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">田村知哉</div><div class="rkval">6件</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#c4cdd9"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">関谷</div><div class="rkval2">3件</div></div></div><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#cd7f44"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">吉田</div><div class="rkval2">3件</div></div></div></div><div class="rk4">4位　横溝　1件</div></div>
+<div class="card"><h2>コミュ力（会話の長さ）</h2><div class="formula">録音の文字数の中央値÷1000。玄関で信頼を得た長さ。</div><div class="rk1"><svg class="medal" width="46" height="46" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#f2c94c"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">1</text></svg><div class="rkinfo"><div class="rkname">田村知哉</div><div class="rkval">2.1分</div></div></div><div class="rk23"><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#c4cdd9"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">2</text></svg><div><div class="rkname2">吉田</div><div class="rkval2">0.8分</div></div></div><div class="rkcell"><svg class="medal" width="32" height="32" viewBox="0 0 40 40"><path d="M12 3 L20 20 L28 3" fill="none" stroke="#7d8cad" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="21" r="14.5" fill="#cd7f44"/><circle cx="20" cy="21" r="14.5" fill="none" stroke="#00000026" stroke-width="1"/><circle cx="20" cy="21" r="10.5" fill="none" stroke="#ffffff55" stroke-width="1"/><text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="#3a2a05">3</text></svg><div><div class="rkname2">横溝</div><div class="rkval2">0.7分</div></div></div></div><div class="rk4">4位　関谷　0.7分</div></div>
+</div>
+<div class="sec">指標くらべ</div><div class="grid">
 <div class="card"><h2>面談率</h2><div class="formula">＝面談 ÷ 叩いた</div><div class="row"><span class="nm">横溝</span><span class="track"><span style="width:72%;background:#4a90d9"></span></span><span class="v">45%</span></div><div class="row"><span class="nm">関谷</span><span class="track"><span style="width:93%;background:#57b894"></span></span><span class="v">58%</span></div><div class="row"><span class="nm">吉田</span><span class="track"><span style="width:100%;background:#a97bd6"></span></span><span class="v">62%</span></div><div class="row"><span class="nm">田村</span><span class="track"><span style="width:90%;background:#e0a24e"></span></span><span class="v">56%</span></div></div>
 <div class="card"><h2>フルトーク到達率</h2><div class="formula">＝フルトーク ÷ 面談</div><div class="row"><span class="nm">横溝</span><span class="track"><span style="width:71%;background:#4a90d9"></span></span><span class="v">18%</span></div><div class="row"><span class="nm">関谷</span><span class="track"><span style="width:74%;background:#57b894"></span></span><span class="v">19%</span></div><div class="row"><span class="nm">吉田</span><span class="track"><span style="width:99%;background:#a97bd6"></span></span><span class="v">25%</span></div><div class="row"><span class="nm">田村</span><span class="track"><span style="width:100%;background:#e0a24e"></span></span><span class="v">25%</span></div></div>
 <div class="card"><h2>フルトーク→アポ転換率</h2><div class="formula">＝アポ ÷ フルトーク</div><div class="row"><span class="nm">横溝</span><span class="track"><span style="width:23%;background:#4a90d9"></span></span><span class="v">8%</span></div><div class="row"><span class="nm">関谷</span><span class="track"><span style="width:75%;background:#57b894"></span></span><span class="v">25%</span></div><div class="row"><span class="nm">吉田</span><span class="track"><span style="width:33%;background:#a97bd6"></span></span><span class="v">11%</span></div><div class="row"><span class="nm">田村</span><span class="track"><span style="width:100%;background:#e0a24e"></span></span><span class="v">33%</span></div></div>
 <div class="card"><h2>コミュ力（会話分）</h2><div class="formula">＝録音の文字数の中央値 ÷ 1000</div><div class="row"><span class="nm">横溝</span><span class="track"><span style="width:33%;background:#4a90d9"></span></span><span class="v">0.7分</span></div><div class="row"><span class="nm">関谷</span><span class="track"><span style="width:33%;background:#57b894"></span></span><span class="v">0.7分</span></div><div class="row"><span class="nm">吉田</span><span class="track"><span style="width:38%;background:#a97bd6"></span></span><span class="v">0.8分</span></div><div class="row"><span class="nm">田村</span><span class="track"><span style="width:100%;background:#e0a24e"></span></span><span class="v">2.1分</span></div></div>
 </div>
-<div class="sec">隠れた強み（8月・各項目No.1）</div><div class="grid">
-<div class="card"><div class="hltag">8月 No.1／コミュ力（会話の長さ）</div><div class="hlname">田村さん</div><div class="hldesc">録音の長さ中央値 2.1分</div></div>
-<div class="card"><div class="hltag">8月 No.1／面談率（玄関で会える）</div><div class="hlname">吉田さん</div><div class="hldesc">62%（叩いた174→面談108）</div></div>
-<div class="card"><div class="hltag">8月 No.1／フルトーク→アポ転換率</div><div class="hlname">田村さん</div><div class="hldesc">33%（提案まで話せた後の決定力）</div></div>
-<div class="card"><div class="hltag">8月 No.1／アポ数</div><div class="hlname">田村さん</div><div class="hldesc">6件</div></div>
-</div>
-<div class="sec">週ごとの伸び（チーム）</div><div class="card"><svg viewBox="0 0 340 150"><line x1="30" y1="124" x2="330" y2="124" stroke="#233150"/><text x="4" y="127" fill="#5f7096" font-size="9">0%</text><line x1="30" y1="70" x2="330" y2="70" stroke="#233150"/><text x="4" y="73" fill="#5f7096" font-size="9">40%</text><line x1="30" y1="16" x2="330" y2="16" stroke="#233150"/><text x="4" y="19" fill="#5f7096" font-size="9">80%</text><circle cx="30" cy="50" r="3.5" fill="#57b894"/><circle cx="30" cy="94" r="3.5" fill="#e0a24e"/><text x="30" y="142" fill="#8394b3" font-size="9" text-anchor="middle">1週</text></svg><div class="note"><span style="color:#57b894">■</span>面談率　<span style="color:#e0a24e">■</span>フルトーク到達率。右肩上がりなら改善中。<br>※まだ1週目のみ。週が進むと線（伸び）が見えます。</div></div>
+<div class="sec">週ごとの伸び（チーム）</div><div class="card"><svg viewBox="0 0 340 150"><line x1="30" y1="124" x2="330" y2="124" stroke="#e2e7f0"/><text x="4" y="127" fill="#8a93a6" font-size="9">0%</text><line x1="30" y1="70" x2="330" y2="70" stroke="#e2e7f0"/><text x="4" y="73" fill="#8a93a6" font-size="9">40%</text><line x1="30" y1="16" x2="330" y2="16" stroke="#e2e7f0"/><text x="4" y="19" fill="#8a93a6" font-size="9">80%</text><circle cx="30" cy="50" r="3.5" fill="#57b894"/><circle cx="30" cy="94" r="3.5" fill="#e0a24e"/><text x="30" y="142" fill="#6f7789" font-size="9" text-anchor="middle">1週</text></svg><div class="note"><span style="color:#57b894">■</span>面談率　<span style="color:#e0a24e">■</span>フルトーク到達率。右肩上がりなら改善中。<br>※まだ1週目のみ。週が進むと線（伸び）が見えます。</div></div>
 <div class="sec">曜日別の叩いた数（チーム合計）</div><div class="card">
 <div class="row"><span class="nm">月</span><span class="track"><span style="width:41%;background:#5878a8"></span></span><span class="v">56</span></div>
 <div class="row"><span class="nm">火</span><span class="track"><span style="width:0%;background:#5878a8"></span></span><span class="v">0</span></div>
