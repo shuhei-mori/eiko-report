@@ -27,6 +27,8 @@ h1{font-size:20px;margin:2px 0}
 .fl .lab{display:flex;justify-content:space-between;font-size:13px;color:#cdd8ec;margin-bottom:4px}
 .fl .track{height:16px;background:#22304d;border-radius:8px;overflow:hidden}
 .fl .track>span{display:block;height:100%;border-radius:8px}
+.pfunnel{margin-top:10px;padding-top:8px;border-top:1px solid #26324d}
+.pfunnel .fl{margin:7px 0}
 /* ハイライト */
 .hltag{font-size:11px;color:#9fb0cf;min-height:30px;display:flex;align-items:flex-start}
 .hlname{font-size:24px;font-weight:700;margin:2px 0}
@@ -58,8 +60,8 @@ svg{display:block;width:100%;height:auto}
 <h1>2026年8月 営業ダッシュボード</h1>
 <div class="sub">結果報告（訪問全数）＋録音解析から自動生成／毎朝更新／当月6日までの累計</div>
 <div class="card"><h2>チーム全体のファネル</h2>
-<div class="fl"><div class="lab"><span>叩いた</span><span>572件（100%）</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>315件（55%）</span></div><div class="track"><span style="width:55%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>70件（12%）</span></div><div class="track"><span style="width:12%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ（ペン＋確）</span><span>13件（2%）</span></div><div class="track"><span style="width:2%;background:#e06c6c"></span></div></div>
-</div>
+<div class="fl"><div class="lab"><span>叩いた</span><span>572件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>315件（叩いた比 55%）</span></div><div class="track"><span style="width:55%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>70件（面談比 22%）</span></div><div class="track"><span style="width:12%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>13件（ﾄｰｸ比 19%）</span></div><div class="track"><span style="width:2%;background:#e06c6c"></span></div></div>
+<div class="formula">率は"前段比"（面談＝叩いた比／フルトーク＝面談比／アポ＝トーク比）。門前払いが多い叩いた基準でなく、一段ずつの通過率で見る。</div></div>
 <div class="sec">量 × 質 マップ（目標ライン）</div>
 <div class="card"><svg viewBox="0 0 340 300"><rect x="44" y="26" width="280" height="242" fill="#111a2e" stroke="#2a3a5c"/><line x1="281" y1="26" x2="281" y2="268" stroke="#c9974e" stroke-width="1.5"/><line x1="44" y1="106" x2="324" y2="106" stroke="#c9974e" stroke-width="1.5"/><text x="278" y="37" fill="#c9974e" font-size="9" text-anchor="end">量目標40/日</text><text x="321" y="102" fill="#c9974e" font-size="9" text-anchor="end">質目標20%</text><text x="320" y="50" fill="#5f7096" font-size="9" text-anchor="end">量◎質◎ 目標クリア</text><text x="48" y="50" fill="#5f7096" font-size="9">質は目標／量を増やす</text><text x="320" y="263" fill="#5f7096" font-size="9" text-anchor="end">量は目標／質を上げる</text><text x="48" y="263" fill="#5f7096" font-size="9">どちらも目標未達</text><text x="44" y="292" fill="#8394b3" font-size="10">→ 量（1日あたり叩いた）</text><text x="38" y="15" fill="#8394b3" font-size="10">↑ 質（ﾌﾙﾄｰｸ率）</text><circle cx="234" cy="122" r="7" fill="#4a90d9"/><text x="234" y="111" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">横溝</text><circle cx="176" cy="116" r="7" fill="#57b894"/><text x="176" y="105" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">関谷</text><circle cx="250" cy="66" r="7" fill="#a97bd6"/><text x="250" y="55" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">吉田</text><circle cx="195" cy="63" r="7" fill="#e0a24e"/><text x="195" y="52" fill="#e7ecf5" font-size="11" font-weight="700" text-anchor="middle">田村</text></svg><div class="note">線は<b style="color:#c9974e">絶対目標</b>（量＝1日40件・質＝ﾌﾙﾄｰｸ率20%）。チーム内で上でも、目標に届かなければ右上（クリア）には入りません。全員がまだ目標未達＝伸びしろがある、という見方。目標値は運用に合わせて調整できます。</div></div>
 <div class="sec">量サマリー（今日・今週・今月）</div>
@@ -119,49 +121,49 @@ svg{display:block;width:100%;height:auto}
 <div class="donutwrap">
 <div class="donut" style="background:conic-gradient(#57b894 0.0deg 162.0deg,#a97bd6 162.0deg 209.2deg,#3a4d72 209.2deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">160</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>72</b></div><div class="mini"><span>インターOUT</span><b>21</b></div><div class="mini"><span>不在ほか</span><b>67</b></div></div></div>
-<div style="margin-top:10px">
-<div class="mini"><span>面談率</span><b>45%</b></div>
-<div class="mini"><span>フルトーク到達率</span><b>18%</b></div>
-<div class="mini"><span>フルトーク→アポ転換率</span><b>8%</b></div>
+<div class="pfunnel">
+<div class="fl"><div class="lab"><span>叩いた</span><span>160件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>72件（叩いた比 45%）</span></div><div class="track"><span style="width:45%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>13件（面談比 18%）</span></div><div class="track"><span style="width:8%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>1件（ﾄｰｸ比 8%）</span></div><div class="track"><span style="width:1%;background:#e06c6c"></span></div></div>
+</div>
+<div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>0.7分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>160件</b></div>
-<div class="note">一番の穴：フルトーク→アポ（到達 8%）＝ここが最優先</div>
+<div class="note">一番の穴：フルトーク→アポ（8%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 <div class="card pcard"><h3 style="border-color:#57b894">関谷駿介</h3>
 <div class="donutwrap">
 <div class="donut" style="background:conic-gradient(#57b894 0.0deg 207.6deg,#a97bd6 207.6deg 240.0deg,#3a4d72 240.0deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">111</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>64</b></div><div class="mini"><span>インターOUT</span><b>10</b></div><div class="mini"><span>不在ほか</span><b>37</b></div></div></div>
-<div style="margin-top:10px">
-<div class="mini"><span>面談率</span><b>58%</b></div>
-<div class="mini"><span>フルトーク到達率</span><b>19%</b></div>
-<div class="mini"><span>フルトーク→アポ転換率</span><b>25%</b></div>
+<div class="pfunnel">
+<div class="fl"><div class="lab"><span>叩いた</span><span>111件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>64件（叩いた比 58%）</span></div><div class="track"><span style="width:58%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>12件（面談比 19%）</span></div><div class="track"><span style="width:11%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>3件（ﾄｰｸ比 25%）</span></div><div class="track"><span style="width:3%;background:#e06c6c"></span></div></div>
+</div>
+<div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>0.7分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>37件</b></div>
-<div class="note">一番の穴：面談→フルトーク（到達 19%）＝ここが最優先</div>
+<div class="note">一番の穴：面談→フルトーク（19%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 <div class="card pcard"><h3 style="border-color:#a97bd6">吉田圭太郎</h3>
 <div class="donutwrap">
 <div class="donut" style="background:conic-gradient(#57b894 0.0deg 223.4deg,#a97bd6 223.4deg 242.1deg,#3a4d72 242.1deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">174</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>108</b></div><div class="mini"><span>インターOUT</span><b>9</b></div><div class="mini"><span>不在ほか</span><b>57</b></div></div></div>
-<div style="margin-top:10px">
-<div class="mini"><span>面談率</span><b>62%</b></div>
-<div class="mini"><span>フルトーク到達率</span><b>25%</b></div>
-<div class="mini"><span>フルトーク→アポ転換率</span><b>11%</b></div>
+<div class="pfunnel">
+<div class="fl"><div class="lab"><span>叩いた</span><span>174件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>108件（叩いた比 62%）</span></div><div class="track"><span style="width:62%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>27件（面談比 25%）</span></div><div class="track"><span style="width:16%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>3件（ﾄｰｸ比 11%）</span></div><div class="track"><span style="width:2%;background:#e06c6c"></span></div></div>
+</div>
+<div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>0.8分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>58件</b></div>
-<div class="note">一番の穴：フルトーク→アポ（到達 11%）＝ここが最優先</div>
+<div class="note">一番の穴：フルトーク→アポ（11%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 <div class="card pcard"><h3 style="border-color:#e0a24e">田村知哉</h3>
 <div class="donutwrap">
 <div class="donut" style="background:conic-gradient(#57b894 0.0deg 201.3deg,#a97bd6 201.3deg 229.6deg,#3a4d72 229.6deg 360.0deg)"><div class="hole"><div style="font-size:10px;color:#8394b3">叩いた</div><div style="font-size:19px;font-weight:700">127</div></div></div>
 <div style="flex:1"><div class="mini"><span>面談</span><b>71</b></div><div class="mini"><span>インターOUT</span><b>10</b></div><div class="mini"><span>不在ほか</span><b>46</b></div></div></div>
-<div style="margin-top:10px">
-<div class="mini"><span>面談率</span><b>56%</b></div>
-<div class="mini"><span>フルトーク到達率</span><b>25%</b></div>
-<div class="mini"><span>フルトーク→アポ転換率</span><b>33%</b></div>
+<div class="pfunnel">
+<div class="fl"><div class="lab"><span>叩いた</span><span>127件</span></div><div class="track"><span style="width:100%;background:#4a90d9"></span></div></div><div class="fl"><div class="lab"><span>面談</span><span>71件（叩いた比 56%）</span></div><div class="track"><span style="width:56%;background:#57b894"></span></div></div><div class="fl"><div class="lab"><span>フルトーク</span><span>18件（面談比 25%）</span></div><div class="track"><span style="width:14%;background:#e0a24e"></span></div></div><div class="fl"><div class="lab"><span>アポ</span><span>6件（ﾄｰｸ比 33%）</span></div><div class="track"><span style="width:5%;background:#e06c6c"></span></div></div>
+</div>
+<div style="margin-top:8px">
 <div class="mini"><span>コミュ力（会話分）</span><b>2.1分</b></div>
 <div class="mini"><span>1アポあたり叩き数</span><b>21件</b></div>
-<div class="note">一番の穴：面談→フルトーク（到達 25%）＝ここが最優先</div>
+<div class="note">一番の穴：面談→フルトーク（25%）＝ここが最優先。率は前段比（叩いた比→面談比→トーク比）。</div>
 </div></div>
 </div>
 <div class="note" style="margin-top:16px">※コミュ力＝送られた録音の文字数の中央値を分換算（1分≒1000字）。会話を長く続けられている＝玄関で信頼を得られている目安。</div>
