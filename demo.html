@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>デモ商談分析</title>
+<script>(function(){var t="light";try{t=localStorage.getItem("eiko_theme")||"light"}catch(e){}document.documentElement.setAttribute("data-theme",t)})();</script>
+<style>
+:root{--bg:#eef1f6;--card:#fff;--cardbd:#e2e7f0;--shadow:rgba(23,37,74,.06);--ink:#1b2537;--ink2:#3d4759;--muted:#5f6b82;--muted2:#6f7789;--faint:#8a93a6;--sub:#6b7488;--h2:#5f6b82;--track:#e6eaf2;--cellbg:#f2f5fa;--line:#e6eaf2;--gold:#a9781f;--goldline:#c9974e;--up:#1f9d57;--down:#d94a3d;--blue:#2b7de0;--amber:#c98a2e}
+:root[data-theme="dark"]{--bg:#0e1524;--card:#18233b;--cardbd:#2a3a5c;--shadow:rgba(0,0,0,.25);--ink:#e7ecf5;--ink2:#cdd8ec;--muted:#aab7d1;--muted2:#8394b3;--faint:#5f7096;--sub:#8394b3;--h2:#9fb0cf;--track:#22304d;--cellbg:#1a2540;--line:#26324d;--gold:#e0b06a;--goldline:#c9974e;--up:#5fca8d;--down:#eb8c8c;--blue:#5b9be8;--amber:#e0b06a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:14px 12px 48px;-webkit-text-size-adjust:100%;overflow-x:hidden}
+.wrap{max-width:760px;margin:0 auto}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.tbtn{flex:0 0 auto;background:var(--card);border:1px solid var(--cardbd);color:var(--ink);border-radius:20px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 1px 3px var(--shadow)}
+.back{display:inline-block;font-size:12px;color:var(--muted);margin-bottom:8px;text-decoration:none}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+h1{font-size:21px;color:var(--ink)}
+.sub{color:var(--sub);font-size:12px;margin-bottom:8px;line-height:1.7}
+.sec{font-size:17px;font-weight:800;color:var(--ink);margin:26px 0 8px}
+.card{background:var(--card);border:1px solid var(--cardbd);border-radius:12px;padding:15px;box-shadow:0 1px 3px var(--shadow);margin-bottom:12px}
+.formula{font-size:11px;color:var(--faint);margin:-2px 0 10px;line-height:1.7}
+.qtbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.qtbl th,.qtbl td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap;color:var(--ink)}
+.qtbl th{color:var(--muted);font-weight:700}
+.badge{display:inline-block;font-size:11px;font-weight:800;border-radius:6px;padding:2px 8px;color:#fff}
+.b-ok{background:var(--up)}.b-blue{background:var(--blue)}.b-amber{background:var(--amber)}.b-ng{background:var(--down)}
+.lead{font-size:13px;color:var(--ink2);line-height:1.85}
+.lead b{color:var(--ink)}
+.pt{margin:12px 0}
+.pt .n{display:inline-block;background:var(--goldline);color:#fff;font-weight:800;font-size:12px;border-radius:50%;width:22px;height:22px;line-height:22px;text-align:center;margin-right:6px}
+.pt .t{font-weight:800;color:var(--ink);font-size:14px}
+.pt .d{font-size:12.5px;color:var(--ink2);line-height:1.85;margin-top:3px}
+.dcard h3{font-size:16px;color:var(--ink);margin-bottom:2px}
+.dcard .meta{font-size:11.5px;color:var(--muted);margin-bottom:10px}
+.row2{font-size:12.5px;color:var(--ink2);line-height:1.8;margin:6px 0;border-top:1px solid var(--line);padding-top:6px}
+.row2 .k{display:inline-block;min-width:78px;color:var(--muted);font-weight:700}
+.good{color:var(--up);font-weight:700}.bad{color:var(--down);font-weight:700}
+.quote{font-size:12px;color:var(--muted2);font-style:normal;background:var(--cellbg);border-left:3px solid var(--goldline);border-radius:0 6px 6px 0;padding:7px 10px;margin-top:8px;line-height:1.75}
+</style></head><body><div class="wrap">
+<a class="back" href="dashboard.html">← ダッシュボードへ戻る</a>
+<div class="top"><h1>デモ商談 分析</h1><button id="themebtn" class="tbtn" onclick="toggleTheme()">ダークに切替</button></div>
+<div class="sub">アポ後の再訪（シミュレーション提示〜クロージング）の録音を1件ずつ深掘り。契約獲得が目的の商談＝初訪（アポ狙い）とは別軸で分析。話者分離なしのため文脈推定を含む目安。対象6件（横溝5・吉田1）。</div>
+
+<div class="sec">結果サマリー（6件）</div>
+<div class="card"><div class="scroll"><table class="qtbl">
+<tr><th>顧客</th><th>営業</th><th>所要</th><th>結果</th><th>決裁者の巻き込み</th></tr>
+<tr><td>小林白虎</td><td>横溝</td><td>約90-120分</td><td><span class="badge b-ok">契約</span></td><td>名義人本人と握れた（配偶者は弱）</td></tr>
+<tr><td>永井広一</td><td>横溝</td><td>約90-120分</td><td><span class="badge b-blue">内諾・手続着手</span></td><td>弱（奥様=妊娠中・未同席）</td></tr>
+<tr><td>市橋</td><td>吉田</td><td>約75分</td><td><span class="badge b-blue">前向き・保留</span></td><td>弱（旦那様不在）</td></tr>
+<tr><td>青木</td><td>横溝</td><td>約60-80分</td><td><span class="badge b-amber">持ち帰り</span></td><td>弱（旦那不在・子ども乱入）</td></tr>
+<tr><td>小林康哉</td><td>横溝</td><td>約60-75分</td><td><span class="badge b-amber">持ち帰り</span></td><td>弱（夫不在）</td></tr>
+<tr><td>矢澤</td><td>横溝</td><td>約50-60分</td><td><span class="badge b-ng">NG</span></td><td>失敗（奥様の感情を害す）</td></tr>
+</table></div>
+<div class="formula">契約1・前向き2・持ち帰り2・NG1。結果を分けた最大要因は「決裁者（夫婦両方）の巻き込み」。</div></div>
+
+<div class="sec">横断の学び（勝ち筋・負け筋）</div>
+<div class="card">
+<div class="pt"><span class="n">1</span><span class="t">決裁者（夫婦両方）の巻き込みが契約の分かれ目</span>
+<div class="d">契約・内諾できた小林白虎/永井は本人と握れた一方、失注・保留の全件で<b>旦那 or 奥様が不在・感情を害した</b>。矢澤は奥様を「計算お得意ですか」と“イジって”感情を害し破談＝最大の失敗例。<br><b>→ デモは必ず夫婦同席で組む。片方不在なら無理にクローズせず、両者が納得できる“1枚資料”を残して次アポで同席を握る。</b></div></div>
+<div class="pt"><span class="n">2</span><span class="t">“期待値を上げて落とす”数字の見せ方で失速</span>
+<div class="d">薄メリット案件で「月2.7万お得」→「実は月6-7千円の負担増」等の落差が命取り（小林康哉・青木・永井）。<br><b>→ 最初から実支払いベース＋“いつ損益分岐か”の累計比較を先に提示。数字を最後に一気出しせず、1項目ずつ「ここまで大丈夫ですか？」で確認。</b></div></div>
+<div class="pt"><span class="n">3</span><span class="t">一方的ロングトーク（教育過多）でクロージング前に時間切れ</span>
+<div class="d">全件で90分前後の独演。顧客が「難しくてついていけない」と脱落、子どものぐずり・時間切れで失速。<br><b>→ 「結局いくら得か」を先に。教育パート（賦課金・燃料調整費など）は圧縮し、要点＋理解確認に。</b></div></div>
+<div class="pt"><span class="n">4</span><span class="t">リスクトークが全件に多い（コンプラ最重要）</span>
+<div class="d">災害関連死8割・断層Sランク等の<b>不安煽り</b>／「間違いなく上がる」「半永久」等の<b>断定</b>／再エネ賦課金“19倍・将来単価”の断定／<b>他社下げ</b>（大手は雑・量販店は素人・他社パワコン交換は嘘）／「CO2データ→国→公共事業」という値引き正当化。<br><b>→ 景表法・断定リスク。事実ベースの言い方へ置き換える。</b></div></div>
+<div class="pt"><span class="n">5</span><span class="t">横展開したい“勝ちパターン”</span>
+<div class="d">自己開示ストーリー（震災体験→建築→再エネ）で信頼構築／誇張メリットを<b>自ら</b>リアル数字に補正して誠実さを演出（小林白虎）／秀逸な例え（タイムマシン・電卓・コップ）で仕組みを平易化（市橋）／デメリットを先に一部認める。<br><b>→ これらは good practice。チームの型として共有。</b></div></div>
+</div>
+
+<div class="sec">各デモの詳細</div>
+
+<div class="card dcard"><h3>小林白虎様 <span class="badge b-ok">契約</span></h3><div class="meta">横溝／約90-120分／新潟市北区・大人5人世帯・名義=本人</div>
+<div class="row2"><span class="k">到達</span>クロージング完走（ソーラーローン・売電・補助金の申込書記入、実印/銀行印案内、名義確認まで）。</div>
+<div class="row2"><span class="k">つまずき</span>大きな失速なし。中盤の技術説明が長く「難しくて」と数回脱落しかけた程度。</div>
+<div class="row2"><span class="k">懸念</span>ネット契約不信／理解不安／発電異常の検知／数ヶ月後の解約可否／金額。</div>
+<div class="row2"><span class="k">クロージング</span>月24,792円×20年（頭金0）。補助金は別枠でクロージングに温存し加点提示。名義人本人と握れたのが勝因。</div>
+<div class="row2"><span class="k">リスク</span>断層Sランク・「電気代は闇」などの不安煽り／「やらない理由はない」断定／他社下げ。</div>
+<div class="row2"><span class="k good">良かった</span>震災ストーリーで信頼構築／誇張メリット(月4万)を自ら「リアルは月3万台」と補正＝誠実さ演出／鋭い質問を持ち上げて丁寧回答。</div>
+<div class="row2"><span class="k bad">改善</span>実データ(検針票)を取らず予測計算が多い／長尺で理解確認不足／金額の本音をやや流し気味。</div>
+<div class="quote">「この子はタイムマシンと思ってください」→ 最後に顧客「乗せられちゃった」。</div></div>
+
+<div class="card dcard"><h3>永井広一様 <span class="badge b-blue">内諾・手続着手</span></h3><div class="meta">横溝／約90-120分／長岡市・築15年・冬の電気代5-7万</div>
+<div class="row2"><span class="k">到達</span>クロージング＋補助金申請書・事前着手届の記入まで着手。契約書面は8/18に別日設定。</div>
+<div class="row2"><span class="k">つまずき</span>金額提示で失速。金利改定の反映漏れで設備料を24,845→25,970円に<b>訂正</b>、メリットを上回り「はみ出る」ことが露呈。実質メリット月2,794円のみ。</div>
+<div class="row2"><span class="k">懸念</span>「損はしたくない」／積雪の発電／会社の撤退・保証／20年後・金利上昇／将来の交換費用。</div>
+<div class="row2"><span class="k">クロージング</span>一括440万・月25,970円(訂正後)→補助金74.5万で実質21,688円。決裁者=奥様(妊娠中)が未同席のまま進行＝後戻りリスク。</div>
+<div class="row2"><span class="k">リスク</span>災害関連死8割・断層Sランク／期限煽り／「タイムマシン」「京セラ世界トップ」等の誇張／他社下げ。</div>
+<div class="row2"><span class="k good">良かった</span>自己開示で信頼構築／料金の仕組みを丁寧に教育→「買わなければいい」論理／懸念質問に誠実回答。</div>
+<div class="row2"><span class="k bad">改善</span>金額を二転三転させない（訂正時「嘘ついたみたい」等の自己否定は厳禁）／薄メリット案件は“はみ出る”提示でなく実質負担を下げる誠実提案／18日は必ず奥様同席で合意。</div>
+<div class="quote">顧客が再エネ賦課金の矛盾を鋭く指摘→営業「鋭い、素晴らしい」。教育が刃にもなり得る。</div></div>
+
+<div class="card dcard"><h3>市橋様 <span class="badge b-blue">前向き・保留</span></h3><div class="meta">吉田／約75分／長岡市・新築・カーポート設置</div>
+<div class="row2"><span class="k">到達</span>クロージング到達。削減額 月19,628円→価格433万・月25,559円→補助金77万で実質356万・月21,049円まで提示。</div>
+<div class="row2"><span class="k">つまずき</span>好感触だが即決に至らず。奥様「金利を研究したい」「計算してみます」＝持ち帰り。旦那様不在で握れず。</div>
+<div class="row2"><span class="k">懸念</span>雪・耐荷重／地震（AI蓄電池でも地震察知なしと認めた）／「正直高い」／採算・維持費／湯切れ・水圧。</div>
+<div class="row2"><span class="k">クロージング</span>補助金を最後の一押しに温存。頭金で期間短縮の選択肢提示。旦那様不在で最終決裁が保留。</div>
+<div class="row2"><span class="k">リスク</span>賦課金「10年で19倍」将来単価断定／他社下げ多数（三菱400万・京セラはブランド代・量販店は素人・他社パワコン交換は嘘）／「雨漏れ一例もない」断定。</div>
+<div class="row2"><span class="k good">良かった</span>例えが秀逸（電卓・タイムマシン・コップ・スマホ劣化）で難解な仕組みを平易化／「ここまで大丈夫ですか？」のテストクローズ／地震機能なし・高いを正直に認め信頼演出。</div>
+<div class="row2"><span class="k bad">改善</span>両面アポのはずが旦那様不在→次回同席を確約（「悪くない気がします」で終わらせない）／実データでヒアリング／「今の支払い vs 新しい支払い」1枚に集約。</div>
+<div class="quote">営業「ありよりのあり？」→奥様「私はやってもいいかなと思いました」。前向きだが握りが甘い。</div></div>
+
+<div class="card dcard"><h3>青木様 <span class="badge b-amber">持ち帰り</span></h3><div class="meta">横溝／約60-80分／長岡市・奥様＋幼児2名同席</div>
+<div class="row2"><span class="k">到達</span>シミュレーション〜設備利用料の提示直後で終了（クロージング入口）。</div>
+<div class="row2"><span class="k">つまずき</span>削減メリット21,745円＜設備利用料 約22,000円で<b>支払中はむしろ増える</b>構造。顧客が自分で「マイナス3千円だよね」と検算した瞬間に失速。子ども乱入で空中分解。</div>
+<div class="row2"><span class="k">懸念</span>「新潟は天気悪く発電しない」／雪で発電不可／「その月は5-6万払う」／「20年後まで生きてられる？」＝回収長すぎ／「ついていけない、この数字は何？」</div>
+<div class="row2"><span class="k">クロージング</span>実質“今は増える”点を曖昧化。旦那不在・子ども対策なしで意思決定できる環境になかった。</div>
+<div class="row2"><span class="k">リスク</span>「上がるのは間違いない」「半永久」「震度7でも大丈夫」断定／熊本地震8割・賦課金79円の極端試算／CO2→公共事業ストーリー。</div>
+<div class="row2"><span class="k good">良かった</span>花火の共通話題で警戒を解く／「メリット出ない家に付けると逆効果」と一部デメリットを先に認め誠実さ演出／教育は丁寧。</div>
+<div class="row2"><span class="k bad">改善</span>数字を最後に一気出ししない（1項目ずつ可視化＋都度確認）／“今は増える”を長期回収で逃げず累計比較で損益分岐を先に見せる／夫婦同席・子ども対策済みの時間帯で再アポ。</div>
+<div class="quote">営業「（死亡時は残債が消えるので）ご安心を」→顧客「20年後まで生きてられる、そこですか？」回収の長さへの本音。</div></div>
+
+<div class="card dcard"><h3>小林康哉様 <span class="badge b-amber">持ち帰り</span></h3><div class="meta">横溝／約60-75分／長岡市・4人家族・幼児あり</div>
+<div class="row2"><span class="k">到達</span>見積・補助金・頭金まで提示（クロージング直前）。最終合意に至らず。</div>
+<div class="row2"><span class="k">つまずき</span>「毎月2.7万メリット」直後、実支払27,153円/月で「最初は月6-7千円の負担増」と判明＝期待値との落差。子どものぐずり＋長時間で時間切れ。</div>
+<div class="row2"><span class="k">懸念</span>日中在宅で電気プラン不利では／ガスを残せるか／エコ給湯が壊れたら／「今決めなきゃダメ？」／負担額。</div>
+<div class="row2"><span class="k">クロージング</span>460万・月27,153円→補助金・頭金で21,840円。だが「今決めなきゃ？」に営業が子ども・時間を理由に<b>自ら引いた</b>（「これ以上言ったらご迷惑」）＝即決の建前を放棄。夫不在。</div>
+<div class="row2"><span class="k">リスク</span>「間違いなく上がる」断定／補助金を後出しで演出／「30件限定・今日答えて」／前職大手を下げる／震度7・ガス火災の不安喚起。</div>
+<div class="row2"><span class="k good">良かった</span>震災ストーリーで信頼構築／電気・ガス・維持費を電卓で1項目ずつ可視化／逃げずに具体回答。</div>
+<div class="row2"><span class="k bad">改善</span>「月2.7万」の大風呂敷→「実は負担増」の落差が致命的＝最初から実支払いベースで正直に／即決型なのに夫(決裁者)不在→夫同席で再設定 or 持ち帰り宿題化で次アポ。</div>
+<div class="quote">顧客「今決めなきゃダメ？」→営業「お子さんも…これ以上言ったらご迷惑」。クロージングを自ら放棄した決定的場面。</div></div>
+
+<div class="card dcard"><h3>矢澤様 <span class="badge b-ng">NG（破談）</span></h3><div class="meta">横溝／約50-60分／新築3-4ヶ月・2人暮らし・奥様同席</div>
+<div class="row2"><span class="k">到達</span>太陽光・蓄電池の仕組み説明まで。肝の総メリット額の提示<b>直前</b>で中断。</div>
+<div class="row2"><span class="k">つまずき</span>中盤に単純な引き算を奥様に解かせ「計算のお得意ですか」と発言→奥様が「馬鹿にされた」と感じて離脱。以後「話が入らない」状態に。</div>
+<div class="row2"><span class="k">懸念</span>夫婦の温度差（片方だけ乗り気）／「お金もかかること」／感情を害され「話が入らない」。</div>
+<div class="row2"><span class="k">クロージング</span>総額シミュ直前で終了＝未達。決裁者(奥様)を巻き込む意図はあったが、その奥様の感情を害して破綻＝決裁者ケアの失敗。</div>
+<div class="row2"><span class="k">リスク</span>「30年は絶対大丈夫」「半永久的」断定／「避難所は絶対行きたくない」煽り／30件限定＋当日回答。</div>
+<div class="row2"><span class="k good">良かった</span>震災ストーリーで動機の一貫性／ガス代を内訳分解して数字で提示／売電単価→蓄電池の価値転換の説明は分かりやすい。</div>
+<div class="row2"><span class="k bad">改善</span><b>客をイジる/試す冗談は厳禁</b>（特に決裁権＆感情キーの奥様へ）→褒め・共感で和ませる／夫婦の温度差を早期検知し反応の薄い側をケア／自分語りを圧縮し肝の総額シミュへ早く到達。</div>
+<div class="quote">奥様に計算を解かせ「計算お得意ですか」→終盤「子どもの質問みたいで馬鹿にされた気持ちに」＝和ませ狙いが真逆に作用し破談の直接原因。</div></div>
+
+<a class="back" href="dashboard.html" style="margin-top:14px">← ダッシュボードへ戻る</a>
+</div>
+<script>function applyTheme(t){document.documentElement.setAttribute("data-theme",t);var b=document.getElementById("themebtn");if(b)b.textContent=(t==="dark")?"ライトに切替":"ダークに切替";}
+function toggleTheme(){var c=document.documentElement.getAttribute("data-theme")==="dark"?"dark":"light";var n=c==="dark"?"light":"dark";try{localStorage.setItem("eiko_theme",n)}catch(e){}applyTheme(n);}
+applyTheme(document.documentElement.getAttribute("data-theme")||"light");</script></body></html>
