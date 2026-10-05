@@ -41,6 +41,11 @@ h1{font-size:21px;color:var(--ink)}
 .chip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--ink2);background:var(--cellbg);border:1px solid var(--cardbd);border-radius:14px;padding:4px 10px;text-decoration:none;white-space:nowrap}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
 .dot.b-ok{background:var(--up)}.dot.b-blue{background:var(--blue)}.dot.b-amber{background:var(--amber)}.dot.b-ng{background:var(--down)}
+details.fold>summary{cursor:pointer;list-style:none;outline:none}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary .sec{display:inline-block;margin:26px 8px 8px 0}
+details.fold>summary:after{content:"タップで開く ▾";font-size:11px;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--cardbd);border-radius:12px;padding:3px 9px;vertical-align:2px}
+details.fold[open]>summary:after{content:"閉じる ▴"}
 </style></head><body><div class="wrap">
 <a class="back" href="dashboard.html">← ダッシュボードへ戻る</a>
 <div class="top"><h1>デモ商談 分析</h1><button id="themebtn" class="tbtn" onclick="toggleTheme()">ダークに切替</button></div>
@@ -69,7 +74,7 @@ h1{font-size:21px;color:var(--ink)}
 </table></div>
 <div class="formula">契約4・内諾/前向き3・保留/持ち帰り3・NG6。結果を分けた最大要因は「決裁者（夫婦両方）の巻き込み」。</div></div>
 
-<div class="sec">横溝の学び（勝ち筋・負け筋）</div>
+<details class="fold"><summary><span class="sec">横溝の学び（勝ち筋・負け筋）</span></summary>
 <div class="formula">対象12件：契約3（小林白虎・飯田・齊藤）・内諾1（永井）・保留3（青木・小林康哉・監物）・NG5（矢澤・目黒・高瀬・井口・平井）</div>
 <div class="card">
 <div class="pt"><span class="n">1</span><span class="t">【勝ち筋】不利な数字まで自分から開示する正直路線が契約を生んでいる</span>
@@ -85,8 +90,8 @@ h1{font-size:21px;color:var(--ink)}
 <div class="pt"><span class="n">6</span><span class="t">【負け筋】前段が長い・無言の同席者を放置</span>
 <div class="d">ほぼ全件で会社紹介・制度解説に1時間前後を使い、肝の数字が後ろ倒し（監物は録音の大半が前提説明のまま保留）。平井・監物では奥様がほぼ無言のまま進み、決裁の片翼を握れていない。<br><b>→ 前段を圧縮して数字へ早く。節目ごとに無言の側へ話を振り、温度を測る。</b></div></div>
 </div>
-
-<div class="sec">吉田の学び（勝ち筋・負け筋）</div>
+</details>
+<details class="fold"><summary><span class="sec">吉田の学び（勝ち筋・負け筋）</span></summary>
 <div class="formula">対象4件：契約1（山崎）・内諾/前向き2（高野・市橋）・NG1（関川）</div>
 <div class="card">
 <div class="pt"><span class="n">1</span><span class="t">【勝ち筋】章ごとの理解確認と平易な例えで、置いてけぼりを作らない</span>
@@ -97,7 +102,7 @@ h1{font-size:21px;color:var(--ink)}
 <div class="d">関川は12時外出が中盤に発覚して金額説明が駆け足になり、夫の父（会社社長・付き合い業者多数）が決裁に絡むと終盤に判明したのに父同席の再訪を組まず「再来週回答」の長い猶予を許した。市橋も旦那様不在のまま提示だけ完了。山崎も奥様がほぼ無言（「わかんない」）のまま＝後戻りの芽。<br><b>→ 冒頭に時間・同席・決裁者を必ず確認。不在なら同席の再訪日時をその場で確定する。</b></div></div>
 <div class="pt"><span class="n">4</span><span class="t">【負け筋】「実質の月払いが今より増える」への答えを持ち帰りにする</span>
 <div class="d">関川は奥様の「今払っているよりちょっと高くなるじゃないですか」に「実質払う額で言ったらもうちょっとします」と認めたまま、答えが将来の値上がり期待頼みで持ち帰りが確定。奥様が「自分で読んで理解したい」と宿題を抱えて終了した。<br><b>→「月払いは増えるが、将来の値上がりをこの額で止める」累計比較を紙1枚で先に見せ、宿題にしない。</b></div></div>
-</div>
+</div></details>
 <div class="formula" style="margin-bottom:14px">運用の補足：金額提示や締結の前で録音が切れている商談が多い（高野・関川・監物・目黒・飯田ほか）。勝ち負けの分かれ目を検証できるよう、録音は締結（またはお断り）まで残す。</div>
 
 <div class="sec" style="display:flex;align-items:center;flex-wrap:wrap;gap:8px">各デモの詳細<span class="toc" style="font-weight:400"><a class="chip" href="#m-202609">9月</a><a class="chip" href="#m-202608">8月</a><a class="chip" href="#m-202607">7月</a><a class="chip" href="#m-202606">6月</a></span></div>
