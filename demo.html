@@ -46,6 +46,9 @@ details.fold>summary::-webkit-details-marker{display:none}
 details.fold>summary .sec{display:inline-block;margin:26px 8px 8px 0}
 details.fold>summary:after{content:"タップで開く ▾";font-size:11px;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--cardbd);border-radius:12px;padding:3px 9px;vertical-align:2px}
 details.fold[open]>summary:after{content:"閉じる ▴"}
+.month-g[hidden]{display:none}
+.mbtn{font-family:inherit;cursor:pointer}
+.mbtn.on{background:var(--goldline);color:#fff;border-color:var(--goldline)}
 </style></head><body><div class="wrap">
 <a class="back" href="dashboard.html">← ダッシュボードへ戻る</a>
 <div class="top"><h1>デモ商談 分析</h1><button id="themebtn" class="tbtn" onclick="toggleTheme()">ダークに切替</button></div>
@@ -105,9 +108,8 @@ details.fold[open]>summary:after{content:"閉じる ▴"}
 </div></details>
 <div class="formula" style="margin-bottom:14px">運用の補足：金額提示や締結の前で録音が切れている商談が多い（高野・関川・監物・目黒・飯田ほか）。勝ち負けの分かれ目を検証できるよう、録音は締結（またはお断り）まで残す。</div>
 
-<div class="sec" style="display:flex;align-items:center;flex-wrap:wrap;gap:8px">各デモの詳細<span class="toc" style="font-weight:400"><a class="chip" href="#m-202609">9月</a><a class="chip" href="#m-202608">8月</a><a class="chip" href="#m-202607">7月</a><a class="chip" href="#m-202606">6月</a></span></div>
-
-<div class="msec" id="m-202609"><b>2026年9月</b>（7件：NG4・契約2・内諾・前向き1）</div>
+<div class="sec" style="display:flex;align-items:center;flex-wrap:wrap;gap:8px">各デモの詳細<span class="toc" style="font-weight:400"><button class="chip mbtn" data-m="all" onclick="selMonth('all')">全て</button><button class="chip mbtn" data-m="m-202609" onclick="selMonth('m-202609')">9月</button><button class="chip mbtn" data-m="m-202608" onclick="selMonth('m-202608')">8月</button><button class="chip mbtn" data-m="m-202607" onclick="selMonth('m-202607')">7月</button><button class="chip mbtn" data-m="m-202606" onclick="selMonth('m-202606')">6月</button></span></div>
+<div class="month-g" id="m-202609"><div class="msec"><b>2026年9月</b>（7件：NG4・契約2・内諾・前向き1）</div>
 <div class="card dcard" id="d-hirai"><h3>平井様 <span class="badge b-ng">NG</span></h3><div class="meta">9/20(日)／横溝／約50-60分／夫婦＋幼い子同席・夫は元電気関係の仕事・屋根は積雪条件で不可→カーポート設置</div>
 <div class="row2"><span class="k">到達</span>仕組み説明→シミュレーション→価格発表（総額390万・月々23,021円×240回）→補助金84.4万・ローン質疑まで到達。録音は繰り上げ返済の質疑途中で終了し、最後の攻防は記録に残っていない。</div>
 <div class="row2"><span class="k">つまずき</span>肝心の収支が「削減メリット22,108円＜月々23,021円」で、頭金なしでは毎月持ち出し。営業自身が「これすらも、はみ出てしまっている状態」と認める発表に。カーポートのみで4.68kWが上限、発電も1割減で補正と、物件条件からメリットが伸びない案件だった。</div>
@@ -171,7 +173,8 @@ details.fold[open]>summary:after{content:"閉じる ▴"}
 <div class="row2"><span class="k good">良かった</span>冬・雪の弱点を隠さず先に開示→AI夜間充電・大雪仕様・落雪対策で一つずつ解決提示(誠実さが信頼に)／200V家電クイズで奥様含め3連続正解→大きく褒めて場が温まる／雨天の工事立会の実例で「天気の悪い日」の不安に即答／使用量約750kWhに合わせ13kWhの大容量を根拠付きで提案。</div>
 <div class="row2"><span class="k bad">改善</span>前半の企画趣旨・自己紹介・制度解説を圧縮し、肝の金額提示へ早く到達する／「絶対保証」「半永久」の断定は保証書面の年数・条件に言い換える／客の質問が出始めた終盤の温度を逃さず、その場で費用提示まで進める段取りに。</div>
 <div class="quote">終盤、客から「今日ぐらいの天気でも発電します?」→「先日雨の中の立会でも、エアコンをつけた状態で太陽光でまかないきれてました」＝懸念への実例の即答が連発する質問(買う前提の合図)を受け止め、当日OK→後日契約への分かれ目に。</div></div>
-<div class="msec" id="m-202608"><b>2026年8月</b>（7件：保留3・契約1・NG1・内諾・前向き2）</div>
+</div>
+<div class="month-g" id="m-202608"><div class="msec"><b>2026年8月</b>（7件：保留3・契約1・NG1・内諾・前向き2）</div>
 <div class="card dcard" id="d-kenmotsu"><h3>監物隼様 <span class="badge b-amber">保留</span></h3><div class="meta">8/26(水)／横溝／録音約25-30分(制度説明の途中で終了)／夫婦・お子様あり・太陽光設置前提で設計した新しめの家・オール電化(平均590kWh・月平均18,262円)</div>
 <div class="row2"><span class="k">到達</span>再エネ賦課金〜燃料調整費の説明の途中で録音が終了。肝の総メリット額・設備料金の提示とクロージングは録音に<b>残っていない</b>。結果報告は保留(答えを預かった状態)で、その後の契約報告なし。</div>
 <div class="row2"><span class="k">つまずき</span>録音内に決定的な破談場面はなし。ただし会社紹介・生い立ち・企画の仕組み・制度の歴史が長く、録音の大半を使ってもまだ前提説明の段階＝金額の話まで遠い。理解の速いご主人が先回りする場面が多く、説明の速度が客に合っていない。</div>
@@ -235,7 +238,8 @@ details.fold[open]>summary:after{content:"閉じる ▴"}
 <div class="row2"><span class="k good">良かった</span>自己開示で信頼構築／料金の仕組みを丁寧に教育→「買わなければいい」論理／懸念質問に誠実回答。</div>
 <div class="row2"><span class="k bad">改善</span>金額を二転三転させない（訂正時「嘘ついたみたい」等の自己否定は厳禁）／薄メリット案件は“はみ出る”提示でなく実質負担を下げる誠実提案／18日は必ず奥様同席で合意。</div>
 <div class="quote">顧客が再エネ賦課金の矛盾を鋭く指摘→営業「鋭い、素晴らしい」。教育が刃にもなり得る。</div></div>
-<div class="msec" id="m-202607"><b>2026年7月</b>（1件：NG1）</div>
+</div>
+<div class="month-g" id="m-202607"><div class="msec"><b>2026年7月</b>（1件：NG1）</div>
 <div class="card dcard" id="d-yazawa"><h3>矢澤様 <span class="badge b-ng">NG（破談）</span></h3><div class="meta">7/19(日)／横溝／約50-60分／新築3-4ヶ月・2人暮らし・奥様同席</div>
 <div class="row2"><span class="k">到達</span>太陽光・蓄電池の仕組み説明まで。肝の総メリット額の提示<b>直前</b>で中断。</div>
 <div class="row2"><span class="k">つまずき</span>中盤に単純な引き算を奥様に解かせ「計算のお得意ですか」と発言→奥様が「馬鹿にされた」と感じて離脱。以後「話が入らない」状態に。</div>
@@ -245,7 +249,8 @@ details.fold[open]>summary:after{content:"閉じる ▴"}
 <div class="row2"><span class="k good">良かった</span>震災ストーリーで動機の一貫性／ガス代を内訳分解して数字で提示／売電単価→蓄電池の価値転換の説明は分かりやすい。</div>
 <div class="row2"><span class="k bad">改善</span><b>客をイジる/試す冗談は厳禁</b>（特に決裁権＆感情キーの奥様へ）→褒め・共感で和ませる／夫婦の温度差を早期検知し反応の薄い側をケア／自分語りを圧縮し肝の総額シミュへ早く到達。</div>
 <div class="quote">奥様に計算を解かせ「計算お得意ですか」→終盤「子どもの質問みたいで馬鹿にされた気持ちに」＝和ませ狙いが真逆に作用し破談の直接原因。</div></div>
-<div class="msec" id="m-202606"><b>2026年6月</b>（1件：契約1）</div>
+</div>
+<div class="month-g" id="m-202606"><div class="msec"><b>2026年6月</b>（1件：契約1）</div>
 <div class="card dcard" id="d-kobayashi-h"><h3>小林白虎様 <span class="badge b-ok">契約</span></h3><div class="meta">6/17(水)／横溝／約90-120分／新潟市北区・大人5人世帯・名義=本人</div>
 <div class="row2"><span class="k">到達</span>クロージング完走（ソーラーローン・売電・補助金の申込書記入、実印/銀行印案内、名義確認まで）。</div>
 <div class="row2"><span class="k">つまずき</span>大きな失速なし。中盤の技術説明が長く「難しくて」と数回脱落しかけた程度。</div>
@@ -256,8 +261,15 @@ details.fold[open]>summary:after{content:"閉じる ▴"}
 <div class="row2"><span class="k bad">改善</span>実データ(検針票)を取らず予測計算が多い／長尺で理解確認不足／金額の本音をやや流し気味。</div>
 <div class="quote">「この子はタイムマシンと思ってください」→ 最後に顧客「乗せられちゃった」。</div></div>
 
+</div>
+
 <a class="back" href="dashboard.html" style="margin-top:14px">← ダッシュボードへ戻る</a>
 </div>
 <script>function applyTheme(t){document.documentElement.setAttribute("data-theme",t);var b=document.getElementById("themebtn");if(b)b.textContent=(t==="dark")?"ライトに切替":"ダークに切替";}
 function toggleTheme(){var c=document.documentElement.getAttribute("data-theme")==="dark"?"dark":"light";var n=c==="dark"?"light":"dark";try{localStorage.setItem("eiko_theme",n)}catch(e){}applyTheme(n);}
-applyTheme(document.documentElement.getAttribute("data-theme")||"light");</script></body></html>
+applyTheme(document.documentElement.getAttribute("data-theme")||"light");
+function selMonth(id){document.querySelectorAll(".month-g").forEach(function(g){g.hidden=(id!=="all"&&g.id!==id)});document.querySelectorAll(".mbtn").forEach(function(b){b.classList.toggle("on",b.dataset.m===id)});}
+selMonth(document.querySelector(".month-g")?document.querySelector(".month-g").id:"all");
+document.addEventListener("click",function(e){var a=e.target.closest('a[href^="#d-"]');if(!a)return;var t=document.querySelector(a.getAttribute("href"));if(t){var g=t.closest(".month-g");if(g&&g.hidden)selMonth(g.id);}});
+
+</script></body></html>
